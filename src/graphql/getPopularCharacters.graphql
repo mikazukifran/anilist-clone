@@ -1,0 +1,20 @@
+query GetPopularCharacters($page: Int, $perPage: Int) {
+    Page(page: $page, perPage: $perPage) {
+        characters(sort: FAVOURITES_DESC) {
+            id
+            name {
+                first
+                middle
+                last
+                full
+                native
+                userPreferred
+            }
+            description
+            image {
+                large
+                medium
+            }
+        }
+    }
+}

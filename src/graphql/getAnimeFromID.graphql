@@ -1,0 +1,92 @@
+query GetAnimeFromID($id: Int) {
+    Media(id: $id) {
+        title {
+            romaji
+            english
+            native
+            userPreferred
+        }
+        coverImage {
+            extraLarge
+            large
+            medium
+            color
+        }
+        favourites
+        averageScore
+        meanScore
+        bannerImage
+        description
+        genres
+        episodes
+        type
+        format
+        status
+        season
+        seasonYear
+        startDate {
+            year
+            month
+            day
+        }
+        endDate {
+            year
+            month
+            day
+        }
+        duration
+        source
+        reviews {
+            edges {
+                node {
+                    id
+                    summary
+                    body
+                    rating
+                    ratingAmount
+                }
+            }
+        }
+        characters {
+            edges {
+                role
+                node {
+                    id
+                    name {
+                        first
+                        middle
+                        last
+                        full
+                        native
+                        userPreferred
+                    }
+                    image {
+                        large
+                        medium
+                    }
+                }
+            }
+        }
+        relations {
+            edges {
+                id
+                relationType
+                node {
+                    id
+                    title {
+                        romaji
+                        english
+                        native
+                        userPreferred
+                    }
+                    coverImage {
+                        extraLarge
+                        large
+                        medium
+                        color
+                    }
+                }
+            }
+        }
+    }
+}
